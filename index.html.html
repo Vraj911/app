@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBO1hZyZsyekvCcOMoi01Pz_HoeBnv1Noc&callback=initMap"></script>
+    <link rel="stylesheet" href="Weather_style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Weather App</h1>
+        <input type="text" id="city-input" placeholder="Enter city...">
+        <button id="show" value="Show" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+            onclick="fun()">Show</button>
+    </header>
+    <img class="cloud clouds1" src="images/clouds (1).png">
+    <img class="cloud clouds2" src="images/clouds (2).png">
+    <img class="cloud clouds3" src="images/clouds (3).png">
+    <img class="sun" src="images/sun-ezgif.com-effects.gif">
+    <img class="wind wind1" src="images/wind-ezgif.com-effects.gif">
+    <img class="wind wind2" src="images/wind-ezgif.com-effects.gif">
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="map-container">
+                        <iframe id="map-frame" style="width: 100%; height: 400px;" frameborder="0"
+                            style="border:0;border-radius: 10px;border-color: aqua;" tabindex="0"></iframe>
+                    </div>
+                    <div class="form-container">
+                        <div class="input-group">
+                            <label for="lat" class="input-label">Latitude</label>
+                            <input type="text" name="latitude" id="lat" class="input-field">
+                        </div>
+                        <div class="input-group">
+                            <label for="lon" class="input-label">Longitude</label>
+                            <input type="text" name="longitude" id="lon" class="input-field">
+                        </div>
+                        <div class="input-group">
+                            <label for="message" class="input-label">Weather Information</label>
+                            <textarea id="message" name="message" class="input-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="Weather_script.js">
+    </script>
+</body>
+
+</html>
